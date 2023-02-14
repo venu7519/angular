@@ -1,0 +1,38 @@
+<body>
+    <div class="container" >
+        <div class="card position-relative mt-4" > 
+          <h1 class="text-center mt-5">ESMSYS</h1>          
+          <div class="card-body text-center mt-2">
+    
+    
+            <form #otp="ngForm" (ngSubmit)="send(otp.value)">
+                <div id="strong"><strong>Enter OTP</strong></div>  
+                <div class="form-floating">
+                  <input required minlength="6" maxlength="6" type="tel" ngModel name="OTP" #OTP="ngModel" class="form-control" id="floatingInput"
+                    placeholder="Ex: 123456">
+                  <ng-container *ngIf="OTP.touched" >
+                    <p *ngIf="OTP.errors?.['required']" class="text-danger">OTP is required</p>
+                  </ng-container>
+                  <label for="floatingInput">OTP</label>
+                </div>
+                <button class="btn btn-primary m-3" style="width: 420px;"  type="submit" [disabled]="otp.invalid">verify OTP</button>
+                <div class="text-center"> <button class="btn btn-warning m-3 w-50">Resend OTP</button></div>
+                
+    
+            </form>
+    
+        </div>
+    </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+  

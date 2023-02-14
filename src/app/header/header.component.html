@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justifty-content-between">
+   
+ <h4 style="color: white; margin-left: 2%;">ESMSYS</h4>
+ <mat-icon id="home" routerLink="">home</mat-icon>
+
+    <div class="extra"></div>
+    <div class="row mr-2 ml-auto">
+      <ul style="padding-top: 15px;">
+        <li>
+          <ng-container *ngIf="!loggedIn() else hideLog">
+          <button  mat-raised-button color="primary" routerLink="/singUp"> Sign Up </button>
+          <button  mat-raised-button color="primary"  routerLink="/login"> log In </button> 
+        </ng-container>
+        <ng-template #hideLog>
+          <button  mat-raised-button color="primary"  routerLink="/table">Users</button> 
+          <!-- <button  mat-raised-button color="primary" routerLink="/verify/otp">OTP</button> -->
+          <button  mat-raised-button color="warn"   (click)="logOut()"> log Out </button>              
+        </ng-template>
+        </li>
+      </ul>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+  

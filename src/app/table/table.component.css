@@ -1,0 +1,59 @@
+/* 
+.searchIcon{
+  position: absolute;
+  z-index: 10;
+  right: 38px;
+  top:27px;
+  color: blue;
+  padding-top: 3.9rem;
+}
+.container{
+  padding-top: 2rem;
+  overflow: auto;
+} */
+
+/* table{
+  width: 100%;
+}
+
+.card-items{
+  width: 100%;
+} */
+
+
+table{
+  width: 100%;
+}
+
+th{
+  background-color: #00afa3;
+  color: #fff;
+  font-size: 16px;
+}
+
+td{
+  font-size: 14px;
+  min-width: 100px;
+}
+
+td.mat-cell{
+  padding: 0 10px;
+}
+
+
+.wraper{
+padding: 20px;
+}
+
+
+.search{
+  position: relative;
+  left: 60%;
+ 
+}
+.end{
+  position: relative;
+  left: 80%;
+  margin-top: 10px;
+
+}

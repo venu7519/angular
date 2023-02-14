@@ -1,0 +1,39 @@
+body{
+    height: 100vh;
+    background-color: blueviolet;
+    padding: 3rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.card{
+    width:500px;
+    height: 400px;
+}
+
+.btn-primary{
+    border: none;
+    background-color:green  !important;
+}
+
+.btn-warning{
+    border: none;
+    background-color: blueviolet !important;
+    color: white;
+}
+
+#strong{
+    margin-bottom: 10px;
+}
+
+.link{
+    margin-top: 10px;
+    color: white;
+    font-weight: 100;
+    text-align: center;
+}

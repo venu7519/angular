@@ -1,0 +1,183 @@
+<body>
+
+<ng-container class="wraper" *ngIf="users.length == 0">
+     
+      <mat-form-field  class="search">
+  <input matInput (keyup)="searchItems($event)" placeholder="Search here">
+</mat-form-field>
+
+    <section class=" mat-elevation-z8" tabindex="0">
+        <table mat-table [dataSource]="allUsers" matSort >
+
+            <ng-container matColumnDef="Sr_no">
+                <th mat-header-cell  mat-sort-header *matHeaderCellDef> Sr.No </th>
+                <td mat-cell *matCellDef="let element; index as n"> {{n+1}} </td>
+              </ng-container>
+      
+            <ng-container matColumnDef="FirstName">
+            <th mat-header-cell  mat-sort-header *matHeaderCellDef> First Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.FirstName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="LastName">
+            <th mat-header-cell  mat-sort-header *matHeaderCellDef> Last Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.LastName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="MobileNo">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Mobile No </th>
+            <td mat-cell *matCellDef="let element"> {{element.MobileNo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="EmailID">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Email ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.EmailID}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="UserID">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> User Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.UserID}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="start_date">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Start Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.start_date}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="end_date">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> End Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.end_date}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="info">
+            <th mat-header-cell *matHeaderCellDef> Info </th>
+            <td mat-cell *matCellDef="let element"><button mat-icon-button color="primary" (click)="getInfo(element.UserID)" >
+                <mat-icon>info</mat-icon>
+              </button></td>
+          </ng-container>
+          
+
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element">  <button mat-icon-button color="warn" (click)="removeUser(element.UserID)" >
+                <mat-icon>delete</mat-icon>
+              </button>
+          </ng-container>
+      
+         
+
+          <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+        </table>
+      </section>
+      
+      <mat-paginator [length]=""
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      showFirstLastButtons
+      aria-label="Select page">
+  </mat-paginator>
+
+
+</ng-container>
+
+    
+<ng-container class="wraper" *ngIf="users.length != 0">
+     
+    <mat-form-field  class="search">
+<input matInput (keyup)="searchItems($event)" placeholder="Search here">
+</mat-form-field>
+
+  <section class=" mat-elevation-z8" tabindex="0">
+      <table mat-table [dataSource]="users" matSort >
+
+
+          <ng-container matColumnDef="Sr_no">
+              <th mat-header-cell  mat-sort-header *matHeaderCellDef> Sr.No </th>
+              <td mat-cell *matCellDef="let element; index as n"> {{n+1}} </td>
+            </ng-container>
+    
+          <ng-container matColumnDef="district">
+          <th mat-header-cell  mat-sort-header *matHeaderCellDef> District </th>
+          <td mat-cell *matCellDef="let element"> {{element.district}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="taluka">
+          <th mat-header-cell  mat-sort-header *matHeaderCellDef> Taluka  </th>
+          <td mat-cell *matCellDef="let element"> {{element.taluka}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="village">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Village </th>
+          <td mat-cell *matCellDef="let element"> {{element.village}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="citysurveyoffice">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> City SurveyOffice</th>
+          <td mat-cell *matCellDef="let element"> {{element.citysurveyoffice}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ward">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Ward </th>
+          <td mat-cell *matCellDef="let element"> {{element.ward}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="sheetno">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Sheetno </th>
+            <td mat-cell *matCellDef="let element"> {{element.sheetno}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="survey_number">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Survey Number </th>
+            <td mat-cell *matCellDef="let element"> {{element.survey_number}} </td>
+          </ng-container>
+
+        <ng-container matColumnDef="start_date">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Start Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.start_date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="end_date">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> End Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.end_date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element">{{element.status}}</td>
+        </ng-container>
+        
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">  <button mat-icon-button color="warn" (click)="removeUser(element.survey_number)" >
+              <mat-icon>delete</mat-icon>
+            </button>
+        </ng-container>
+    
+       
+
+        <tr mat-header-row *matHeaderRowDef="col; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: col;"></tr>
+      
+      </table>
+    </section>
+    
+ <button class="btn btn-warning end" (click)="showHide()">Back</button>
+        
+       
+    
+
+
+
+    <mat-paginator [length]=""
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    showFirstLastButtons
+    aria-label="Select page">
+</mat-paginator>
+
+
+</ng-container>
+
+</body>

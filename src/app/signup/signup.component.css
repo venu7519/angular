@@ -1,0 +1,40 @@
+input.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+
+body{
+    /* margin-top: 2rem; */
+    background: blueviolet;
+    padding: 3rem;
+}
+
+
+.container{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh;
+    background-color: blueviolet; */
+}
+
+.card{
+    width:60% 
+
+}
+
+.btn-primary{
+    border: none;
+    background-color:green  !important;
+}
+label{
+    margin: 10px;
+}
+.form-control{
+    margin: 10px;
+}
+
+#info{
+    text-align: center;
+    font-weight: 200;
+}

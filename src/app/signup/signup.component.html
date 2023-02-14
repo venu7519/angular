@@ -1,0 +1,94 @@
+
+<body>
+    <div class="container">
+        <div class="card position-relative mt-4">
+            <h1 class="text-center text-danger mt-5">ESMSYS</h1>
+            <div class="card-body mt-2">
+                <div id="info">Don't have an account? <br> Create your own account, it takes less than a minute</div>
+    
+                <div class="card-body">
+                    <form [formGroup]="signupForm">
+                        
+                        <div class="form-group">
+                            <label for="name">First Name *</label>
+                            <input type="text" formControlName="FirstName" placeholder="Enter your FirstName"
+                                class="form-control">
+                            <div *ngIf="getControls['FirstName']?.['touched'] && getControls['FirstName']?.['errors']"
+                                class="text-danger">
+                                <div *ngIf="getControls['FirstName']?.['errors']?.['required']">First Name is required</div>
+                                <!-- <div *ngIf="getControls['name']?.['errors']?.['minlength']">min</div> -->
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="name">Last Name *</label>
+                            <input type="text" formControlName="LastName" placeholder="Enter your LastName"
+                                class="form-control">
+                            <div *ngIf="getControls['LastName']?.['touched'] && getControls['LastName']?.['errors']"
+                                class="text-danger">
+                                <div *ngIf="getControls['LastName']?.['errors']?.['required']">Last Name is required</div>
+                                <!-- <div *ngIf="getControls['name']?.['errors']?.['minlength']">min</div> -->
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="text" formControlName="Email" placeholder="Enter your Name" class="form-control">
+                            <div *ngIf="getControls['Email']?.['touched'] && getControls['Email']?.['errors']"
+                                class="text-danger">
+                                <div *ngIf="getControls['Email']?.['errors']?.['required']">Email is required</div>
+                                <!-- <div *ngIf="getControls['name']?.['errors']?.['minlength']">min</div> -->
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label>Mobile Number *</label>
+                            <input type="tel" formControlName="MobileNo" placeholder="Enter your Mobile Number"
+                                class="form-control"><br>
+                            <div *ngIf="getControls['MobileNo']?.['touched'] && getControls['MobileNo']?.['errors']"
+                                class="text-danger">
+                                <div *ngIf="getControls['MobileNo']?.['errors']?.['required']">Mobile Number is required.
+                                </div>
+                                <div *ngIf="getControls['MobileNo']?.['errors']?.['minlength']">Mobile Number should be 10
+                                    numbers</div>
+                                <div *ngIf="getControls['MobileNo']?.['errors']?.['maxlength']">Mobile Number should not be
+                                    more than 10
+                                    numbers</div>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" formControlName="Password" placeholder="Password"
+                                    class="form-control">
+                                <div *ngIf="getControls['Password']?.['touched']&& getControls['Password']?.['errors']"
+                                    class="text-danger">
+                                    <div *ngIf="getControls['Password']?.['errors']?.['required']">Password is required
+                                    </div>
+                                    <div *ngIf="getControls['Password']?.['errors']?.['minlength']">Password should be
+                                        minimum 8 charaters</div>
+                                </div>
+                                <div class="text-center"> <button class="w-50 btn btn-lg btn-primary m-2" (click)="submit()"
+                                        [disabled]="signupForm['invalid']">Sing Up</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</body>
+
+
+
+
+<!-- <div class="container" >
+    <div class="card position-relative mt-4" > 
+      <h1 class="text-center mt-5">ESMSYS</h1>          
+      <div class="card-body text-center mt-2">
+       <div id="strong">Don't have an account? Create your own account, it takes less than a minute</div>
+        
+      <button class="btn btn-primary m-3" style="width: 420px;" (click)="verifyOtp()">verify OTP</button>
+  </div>
+  </div>
+  </div> -->

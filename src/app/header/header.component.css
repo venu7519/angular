@@ -1,0 +1,54 @@
+.extra{
+  flex: 1 1 auto;
+}
+.logo{
+  margin-left:  20px;
+}
+
+mat-toolbar{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #152238;
+}
+li{
+    list-style: none;
+  }
+
+button{
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.user{
+  font-size: 14px;
+}
+.user-image{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.user-image-icon{
+  height: 18px;
+  font-size: 16px;
+   
+}
+::ng-deep .mat-menu-content{
+  width: 160px;
+
+}
+
+.mat-menu-item{
+  color: red;
+}
+
+button{
+  margin-left: 10px;
+  margin-left: 10px;
+}
+
+#home{
+  color: white;
+  margin-left: 18px;
+  padding-bottom: 5px;
+}

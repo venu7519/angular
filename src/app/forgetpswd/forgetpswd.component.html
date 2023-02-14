@@ -1,0 +1,32 @@
+<body>
+    <div class="container">
+        <div class="card position-relative mt-4">
+            <h1 class="text-center text-danger mt-5">ESMSYS</h1>
+            <div class="card-body mt-2">
+                <div id="info">Enter your email address and we'll send you a <br> New Password</div>
+
+                <div class="card-body">
+                    <form [formGroup]="submitEmail">
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="text" formControlName="Email" placeholder="Enter your Email"
+                                class="form-control">
+                            <div *ngIf="getControls['Email']?.['touched'] && getControls['Email']?.['errors']"
+                                class="text-danger">
+                                <div *ngIf="getControls['Email']?.['errors']?.['required']">Email is required</div>
+                                <!-- <div *ngIf="getControls['name']?.['errors']?.['minlength']">min</div> -->
+                            </div>
+                        </div>
+
+                        <div class="text-center"> <button class="w-50 btn btn-lg btn-primary m-2" (click)="submit()"
+                                [disabled]="submitEmail['invalid']">Submit</button></div>
+                    </form>
+                </div>
+            </div> 
+         </div>
+        </div>
+            <div class="link">Back to <a  class="link" style="text-decoration: none;"  routerLink="/login" ><strong>Log In</strong></a></div>
+      
+   
+</body>

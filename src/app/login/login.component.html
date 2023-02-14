@@ -1,0 +1,42 @@
+<body>
+  <div class="container">
+    <div class="card position-relative mt-2">
+      <h1 class="text-center text-danger mt-5">ESMSYS</h1>
+      <div class="card-body mt-2">
+        <div id="info">Enter your email address and password to <br> access admin panel.</div>
+
+        <div class="card-body">
+          <form [formGroup]="submitEmail">
+
+            <div class="form-group">
+              <label for="email">Email Or Phone No.</label>
+              <input type="text" formControlName="EmailOrMobileNo" placeholder="Email or Phone No." class="form-control">
+              <div *ngIf="getControls['EmailOrMobileNo']?.['touched'] && getControls['EmailOrMobileNo']?.['errors']" class="text-danger">
+                <div *ngIf="getControls['EmailOrMobileNo']?.['errors']?.['required']">Email or MobileNo is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" formControlName="Password" placeholder="Password" class="form-control">
+              <div *ngIf="getControls['Password']?.['touched']&& getControls['Password']?.['errors']"
+                class="text-danger">
+                <div *ngIf="getControls['Password']?.['errors']?.['required']">Password is required
+                </div>
+                <div *ngIf="getControls['Password']?.['errors']?.['minlength']">Password should be
+                  minimum 8 charaters</div>
+              </div>
+          </div>
+          <div class="text-center"> <button class="w-50 btn btn-lg btn-primary m-2" (click)="submit()"
+            [disabled]="submitEmail['invalid']">Log In</button>          
+    
+      </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="link"><a  class="link" style="text-decoration: none;"  routerLink="/reset/password" > Forgot your password?</a></div>
+  <div class="link">Don't have an account? <a  class="link" style="text-decoration: none;"  routerLink="/singUp" ><strong>Sign Up</strong></a></div>
+</body>
